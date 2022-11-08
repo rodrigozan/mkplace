@@ -17,11 +17,19 @@ const DB_NAME = process.env.MONGO_DB_NAME;
 
 const DB_URI = `${DB_URL}:${DB_PORT}/${DB_NAME}`
 
+/**
+ * Configuration
+*/
+
 mongoose.connect(DB_URI)
 .then(() => console.log(`API connected in MONGO DB in ${DB_URI}`))
 .catch((error) => console.error(`Error in connection: ${error}`))
 
 const db = mongoose.connection;
+
+/**
+ * Export
+*/
 
 export default db;
 

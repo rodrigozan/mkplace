@@ -4,7 +4,8 @@
   "description": "",
   "main": "src/server.js",
   "scripts": {
-    "dev": "ts-node-dev --respawn --pretty --transpile-only src/server.ts"
+    "dev": "ts-node-dev --respawn --pretty --transpile-only src/server.ts",
+    "dev:test": "mocha ./src/test/db.test.js --timeout 60000 --exit"
   },
   "keywords": [],
   "author": "Rodrigo Zandonadi",
@@ -23,6 +24,10 @@
     "@types/helmet": "^4.0.0",
     "@types/mongoose": "^5.11.97",
     "@types/node": "^18.11.9",
+    "assert": "^2.0.0",
+    "chai": "^4.3.7",
+    "chai-http": "^4.3.0",
+    "mocha": "^10.1.0",
     "ts-node-dev": "^2.0.0",
     "typescript": "^4.8.4"
   }
