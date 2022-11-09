@@ -1,9 +1,7 @@
-import mongoose from 'mongoose';
+import { Schema, model} from "mongoose";
+import { BaseProduct } from "../interface/product.interface";
 
-// eslint-disable-next-line prefer-destructuring
-const Schema = mongoose.Schema;
-
-const ProductSchema = new Schema({
+const ProductSchema: Schema = new Schema<BaseProduct>({
     nome: {
         type: String,
         required: [true, 'Nome é obrigatório.'],
@@ -23,5 +21,6 @@ const ProductSchema = new Schema({
     }
 });
 
-const Product = mongoose.model('products', ProductSchema);
+const Product = model<BaseProduct>('products', ProductSchema);
+
 export default Product;

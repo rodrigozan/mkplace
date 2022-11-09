@@ -1,12 +1,14 @@
+import { BaseProduct, Product } from "../interface/product.interface";
 import ProductModel from "../models/products.model";
 
-exports.find = async function (query: any) {
+const find = async () => {
+    const product: Array<BaseProduct> = await ProductModel.find();
+    return product;
+};
 
-    try {
-        var products = await ProductModel.find(query)
-        return products;
-    } catch (e) {
-        // Log Errors
-        throw Error('Errors to find products')
-    }
-}
+const findByParams = async (filtro: any, value: BaseProduct) => {
+    const product: Array<BaseProduct> = await ProductModel.find({ filtro: value });
+    return product;
+};
+
+export { find }
