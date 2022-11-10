@@ -6,9 +6,9 @@ const find = async () => {
     return product;
 };
 
-const findByParams = async (filtro: any, value: BaseProduct) => {
+const findByParams = async (value: BaseProduct) => {
     const product: Array<BaseProduct> = await ProductModel.find({ filtro: value });
     return product;
 };
 
-export { find }
+export { find, findByParams }
